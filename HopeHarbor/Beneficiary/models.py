@@ -1,6 +1,8 @@
 from django.db import models
 from User.models import User
 from Donor.models import Amount_Tracker, Goods_Tracker
+
+
 class Address(models.Model):
     house_number = models.CharField(max_length=50)
     street = models.CharField(max_length=50, default= ' ')
@@ -10,6 +12,7 @@ class Address(models.Model):
 
     def __str__(self):
         return f"{self.house_number}, {self.street}, {self.barangay}, {self.city}, {self.state}"
+
 
 class Beneficiary(User):
     NEEDS_CHOICES = (
