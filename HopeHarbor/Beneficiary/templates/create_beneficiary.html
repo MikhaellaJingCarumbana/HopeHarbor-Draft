@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Beneficiary Registration</title>
+</head>
+<body>
+    <h1>Beneficiary Registration</h1>
+
+    <form method="post">
+        {% csrf_token %}
+
+        <!-- Beneficiary fields -->
+        <h2>Beneficiary Information</h2>
+        {{ beneficiary_form.as_p }}
+
+        <!-- Address fields -->
+        <h2>Address Information</h2>
+        {{ address_form.as_p }}
+
+        <button type="submit">Register</button>
+    </form>
+</body>
+</html>
