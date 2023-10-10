@@ -21,5 +21,5 @@ class BeneficiaryRegistration(View):
         return render(request, self.template_name, {'beneficiary_form': beneficiary_form, 'address_form': address_form})
 
 class BeneficiaryLoginView(LoginView):
-    template_name = 'login_beneficiary.html'  # Specify the path to your login template
+    template_name = 'login_donor.html'  # Specify the path to your login template
     success_url = reverse_lazy('beneficiary:index')  # Redirect to a success page after login
