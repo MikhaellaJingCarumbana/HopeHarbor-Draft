@@ -6,35 +6,43 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #c1d8b9; /* Sage green background color */
             margin: 0;
             padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
+
         .container {
             max-width: 400px;
-            margin: 0 auto;
-            padding: 20px;
             background-color: #fff;
             border: 1px solid #ccc;
             border-radius: 5px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-
+            padding: 20px;
         }
+
         h1 {
             text-align: center;
         }
+
         label {
             display: block;
             margin-bottom: 10px;
         }
+
         input[type="text"],
         input[type="password"] {
-            width: 90%;
+            width: 100%;
             padding: 10px;
             margin-bottom: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
+            box-sizing: border-box; /* Add this property to account for padding and border in the width */
         }
+
         button {
             background-color: #007bff;
             color: #fff;
@@ -42,23 +50,22 @@
             border-radius: 5px;
             padding: 10px 20px;
             cursor: pointer;
+            width: 100%;
         }
+
         button:hover {
             background-color: #0056b3;
         }
     </style>
 </head>
 <body>
-<div class="container">
-    <h1>AdminStaff Registration</h1>
-    <form method = "post">
-        {% csrf_token %}
-
-        <h2>AdminStaff Information</h2>
-        {{ AdminStaff_form.as_p }}
-
-        <button type = "submit">Register</button>
-    </form>
-</div>
+    <div class="container">
+        <h1>AdminStaff Registration</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ AdminStaff_form.as_p }}
+            <button type="submit">Register</button>
+        </form>
+    </div>
 </body>
 </html>

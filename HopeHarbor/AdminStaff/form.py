@@ -16,7 +16,7 @@ class AdminStaffForm(ModelForm):
     lastname = forms.CharField(
         widget=forms.TextInput(attrs={'placeholder': 'Last Name'})
     )
-    emailaddress = forms.EmailField(
+    email = forms.EmailField(
         widget=forms.EmailInput(attrs={'placeholder': 'Email Address'})
     )
     usertype = forms.CharField(
@@ -26,4 +26,4 @@ class AdminStaffForm(ModelForm):
 
     class Meta:
         model = AdminStaff
-        fields = ['username', 'password', 'firstname', 'lastname', 'emailaddress', 'usertype']
+        fields = ['username', 'password', 'firstname', 'lastname', 'email', 'usertype']
